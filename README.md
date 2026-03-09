@@ -63,7 +63,7 @@ Business KPIs are calculated in Power BI using DAX.
 
 `COUNT(DISTINCT fullVisitorId)`
 
-* New Users - Users who visited the website for the first time during the session.
+* New Users - Users who visited the website for the first time.
 
 `SUM(totals.newVisits)`
 
