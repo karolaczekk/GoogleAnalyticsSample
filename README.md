@@ -195,22 +195,6 @@ The dashboard supports global filters:
 All visualizations dynamically update based on these filters.
 
 
-# Repository Structure
-
-project
-── sql
-    ── base\_sessions.sql
-    ── dim\_date.sql
-    ── dim\_device.sql
-    ── dim\_country.sql
-    ── dim\_channel.sql
-    ── v\_traffic.sql
-    ── v\_geography.sql
-    ── v\_acquisition.sql
-── powerbi
-    ── dashboard.pbix
-── README.md
-
 
 
 
