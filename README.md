@@ -1,5 +1,7 @@
 # Google Analytics Traffic Analysis – BigQuery & Power BI
 
+Dashboard: https://app.powerbi.com/view?r=eyJrIjoiMjIyZmRlOTYtMDliZS00MTBlLTk0YjMtY2U2NDVkMmRmZmY5IiwidCI6ImNmZjA3MGM3LTZiN2EtNDEyNS1iOTAzLTIwMzJhNGMzYjE5MyIsImMiOjl9
+
 # Project Overview
 This project analyzes website traffic using the Google Analytics Sample Dataset available in BigQuery.
 The analysis focuses on the last 180 days of available data.
