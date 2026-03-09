@@ -11,6 +11,7 @@ The analysis focuses on the last 180 days of available data.
 - SQL – building analytical views and data preparation
 - Power BI – dashboard design and data visualization
 - Google Analytics Sample Dataset (Obfuscated GA360)
+https://urldefense.com/v3/__https://console.cloud.google.com/marketplace/product/obfuscated-ga360-data/obfuscated-ga360-data?inv=1&invt=Ab5XmA&project=techapps-460619__;!!IHJ3XrWN4X8!LlIUaKk7caNY5T3AwoDdYM3gc4J0sSrC5Em8iZVIMTUfmrAZmPA26Ba71N7NmcrMAvVf5Ege5BFJx4quhruxwBplx1P4r22-7g$
 
 Dataset used:
 `bigquery-public-data.google_analytics_sample.ga_sessions_*`
