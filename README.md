@@ -1,4 +1,4 @@
-# Google Analytics Traffic Analysis – BigQuery & Power BI
+# Google Analytics Analysis – BigQuery & Power BI
 
 Dashboard: [Overview](https://app.powerbi.com/view?r=eyJrIjoiMjIyZmRlOTYtMDliZS00MTBlLTk0YjMtY2U2NDVkMmRmZmY5IiwidCI6ImNmZjA3MGM3LTZiN2EtNDEyNS1iOTAzLTIwMzJhNGMzYjE5MyIsImMiOjl9)
 
