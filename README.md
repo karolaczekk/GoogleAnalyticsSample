@@ -1,17 +1,16 @@
 # Google Analytics Traffic Analysis – BigQuery & Power BI
 
-Dashboard: https://app.powerbi.com/view?r=eyJrIjoiMjIyZmRlOTYtMDliZS00MTBlLTk0YjMtY2U2NDVkMmRmZmY5IiwidCI6ImNmZjA3MGM3LTZiN2EtNDEyNS1iOTAzLTIwMzJhNGMzYjE5MyIsImMiOjl9
+Dashboard: [Overview](https://app.powerbi.com/view?r=eyJrIjoiMjIyZmRlOTYtMDliZS00MTBlLTk0YjMtY2U2NDVkMmRmZmY5IiwidCI6ImNmZjA3MGM3LTZiN2EtNDEyNS1iOTAzLTIwMzJhNGMzYjE5MyIsImMiOjl9)
 
-# Project Overview
+## Project Overview
 This project analyzes website traffic using the Google Analytics Sample Dataset available in BigQuery.
 The analysis focuses on the last 180 days of available data.
 
-# Tech Stack
+## Tech Stack
 - Google BigQuery – data storage and SQL transformations
 - SQL – building analytical views and data preparation
 - Power BI – dashboard design and data visualization
-- Google Analytics Sample Dataset (Obfuscated GA360)
-https://urldefense.com/v3/__https://console.cloud.google.com/marketplace/product/obfuscated-ga360-data/obfuscated-ga360-data?inv=1&invt=Ab5XmA&project=techapps-460619__;!!IHJ3XrWN4X8!LlIUaKk7caNY5T3AwoDdYM3gc4J0sSrC5Em8iZVIMTUfmrAZmPA26Ba71N7NmcrMAvVf5Ege5BFJx4quhruxwBplx1P4r22-7g$
+- Google Analytics Sample Dataset [Obfuscated GA360](https://urldefense.com/v3/__https://console.cloud.google.com/marketplace/product/obfuscated-ga360-data/obfuscated-ga360-data?inv=1&invt=Ab5XmA&project=techapps-460619__;!!IHJ3XrWN4X8!LlIUaKk7caNY5T3AwoDdYM3gc4J0sSrC5Em8iZVIMTUfmrAZmPA26Ba71N7NmcrMAvVf5Ege5BFJx4quhruxwBplx1P4r22-7g$)
 
 Dataset used:
 `bigquery-public-data.google_analytics_sample.ga_sessions_*`
@@ -19,14 +18,14 @@ Dataset used:
 Project ID:
 project-489518
 
-# Project Architecture
--> Raw Data (Google Analytics)
--> base_sessions (180-day filtered dataset)
--> Analytical Views
-    v_traffic
-    v_geography
-    v_acquisition
--> Power BI Dashboard
+## Project Architecture
+- Raw Data (Google Analytics)  
+- base_sessions (180-day filtered dataset)  
+- Analytical Views  
+    - v_traffic  
+    - v_geography  
+    - v_acquisition  
+- Power BI Dashboard  
 
 Dimension tables were created to support global filtering in Power BI.
 - dim_date
@@ -34,22 +33,22 @@ Dimension tables were created to support global filtering in Power BI.
 - dim_country
 - dim_channel
 
-# SQL Data Model
+## SQL Data Model
 
-Base View
+Base View  
 `base_sessions` filters the dataset to the last 180 days.
 
-Date range logic
-Last 180 days are calculated dynamicallybased on the maximum available date in the dataset.
+Date range logic  
+Last 180 days are calculated dynamically based on the maximum available date in the dataset.
 
-Dimension Tables
+Dimension Tables  
 These tables enable global filters in Power BI.
-- dim_date - calendar table for the last 180 days
-- dim_device - device categories
-- dim_country - list of countries from dataset
-- dim_channel - Google Analytics marketing channel grouping
+- `dim_date` - calendar table for the last 180 days
+- `dim_device` - device categories
+- `dim_country` - list of countries from dataset
+- `dim_channel` - Google Analytics marketing channel grouping
 
-# Metric Definitions
+## Metric Definitions
 
 The following metrics are used in the analysis. All metrics are calculated at the session level.
 Core metrics are calculated in BigQuery.
@@ -88,9 +87,9 @@ Business KPIs are calculated in Power BI using DAX.
 `Sessions / Users`
 
 
-# Analytical Views
+## Analytical Views
 
-1.Traffic View (`v_traffic`)
+### Traffic View (`v_traffic`)
 
 Purpose: analyze overall website traffic.
 
@@ -107,13 +106,11 @@ Dimensions:
 - Device
 - Channel
 
-2.Geography View (`v_geography`)
+### Geography View (`v_geography`)
 
 Purpose: analyze traffic distribution by location.
 
 Metrics:
-
-Sessions
 - Sessions
 - Users
 
@@ -124,7 +121,7 @@ Dimensions:
 - Device
 - Channel
 
-3.Acquisition View (`v_acquisition`)
+### Acquisition View (`v_acquisition`)
 
 Purpose: analyze marketing traffic sources.
 
@@ -141,7 +138,7 @@ Dimensions:
 - Channel
 
 
-# Power BI Data Model
+## Power BI Data Model
 
 Star schema with shared dimensions:
 - dim_date
@@ -151,11 +148,11 @@ Star schema with shared dimensions:
 
 All fact views connected via 1:* relationships.
 
-# Power BI Dashboard
+## Power BI Dashboard
 
 The Power BI dashboard contains three analytical sections.
 
-1.Traffic
+### 1. Traffic
 
 Key KPIs:
 * Sessions
@@ -171,14 +168,14 @@ Visualizations:
 * Sessions by device
 * KPI summary cards
 
-2.Geography Analysis
+### 2. Geography Analysis
 
 Visualizations:
 * World map of traffic distribution
 * Top countries table
 * Sessions by location
 
-3.Acquisition Analysis
+### 3. Acquisition Analysis
 
 Visualizations:
 * Campaign performance
@@ -186,7 +183,7 @@ Visualizations:
 * Traffic trend by marketing channel
 
 ----
-Global Filters
+### Global Filters
 The dashboard supports global filters:
 * Date
 * Device
@@ -195,7 +192,23 @@ The dashboard supports global filters:
 
 All visualizations dynamically update based on these filters.
 
-
+## Repository Structure
+project  
+│  
+├── sql  
+│   ├── base_sessions.sql  
+│   ├── dim_date.sql  
+│   ├── dim_device.sql  
+│   ├── dim_country.sql  
+│   ├── dim_channel.sql  
+│   ├── v_traffic.sql  
+│   ├── v_geography.sql  
+│   └── v_acquisition.sql  
+│  
+├── powerbi  
+│   └── dashboard.pbix  
+│  
+└── README.md  
 
 
 
